@@ -1,8 +1,9 @@
 <template>
   <div class="panel">
     <todo-list-vue></todo-list-vue>
-    <plus-button/>
-    <input-box-vue/>
+     <input-box-vue :visible='visible'/>
+    <plus-button @toggle='visible=!visible'/>
+   
   </div>
 </template>
 
@@ -12,6 +13,12 @@ import PlusButton from './PlusButton.vue'
 import TodoListVue from './TodoList.vue'
 
 export default {
+    data(){
+        return{
+            visible:false
+        }
+    }
+    ,
 
 components:{
     PlusButton,
@@ -28,6 +35,8 @@ components:{
     background-color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
 }
 
 

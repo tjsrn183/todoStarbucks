@@ -1,7 +1,7 @@
 <template>
 <div>
-<li v-for="(todoItem,index) in todo" :key="index">
-<todo-atom-vue :todoItem='todoItem' ></todo-atom-vue>
+<li v-for="(todoItem,index) in todo" :key="index" class="list">
+<todo-atom-vue :todoItem='todoItem' :index='index'></todo-atom-vue>
   </li>
 </div>
   
@@ -22,5 +22,7 @@ computed:{
 </script>
 
 <style>
-
+.list{
+    list-style: none;
+}
 </style>
